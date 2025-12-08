@@ -41,7 +41,7 @@ export default function CharacterCard({ character }: CharacterCardProps) {
         </div>
 
         <CardContent className="p-5 bg-white space-y-3">
-          <h3 className="font-black text-xl leading-tight uppercase line-clamp-2 tracking-tight">
+          <h3 className="font-black text-3xl leading-tight uppercase line-clamp-2 tracking-tight">
             {character.name}
           </h3>
 

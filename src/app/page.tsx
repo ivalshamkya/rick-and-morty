@@ -10,8 +10,8 @@ export default function Home() {
           <Image
             src="/rick-and-morty-logo.png"
             alt="Rick and Morty Logo"
-            width={400}
-            height={200}
+            width={480}
+            height={240}
             className="mx-auto mb-4"
           />
         </div>

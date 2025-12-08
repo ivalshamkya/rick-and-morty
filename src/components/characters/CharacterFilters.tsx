@@ -147,7 +147,6 @@ export default function CharacterFilters() {
   return (
     <div className="mb-12">
       <form onSubmit={handleSearch} className="space-y-5">
-        {/* Search Bar */}
         <div className="flex flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black h-5 w-5" />
@@ -332,7 +331,6 @@ export default function CharacterFilters() {
           </div>
         </div>
 
-        {/* Active Filters */}
         {activeFilterCount > 0 && (
           <div className="flex flex-wrap gap-3 items-center">
             <span className="text-sm font-black uppercase">Active:</span>
