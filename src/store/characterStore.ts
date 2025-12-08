@@ -1,6 +1,6 @@
-import { create } from 'zustand';
-import { Character, CharacterFilters } from '@/types/characters';
-import { characterAPI } from '@/lib/api';
+import { create } from "zustand";
+import { Character, CharacterFilters } from "@/types/characters";
+import { characterAPI } from "@/lib/api";
 
 interface CharacterState {
   characters: Character[];
@@ -36,7 +36,7 @@ export const useCharacterStore = create<CharacterState>((set, get) => ({
       });
     } catch (error: any) {
       set({
-        error: error.response?.data?.error || 'Failed to fetch characters',
+        error: error.response?.data?.error || "Failed to fetch characters",
         loading: false,
         characters: [],
       });
@@ -45,7 +45,7 @@ export const useCharacterStore = create<CharacterState>((set, get) => ({
 
   setFilters: (newFilters) => {
     set((state) => ({
-      filters: { ...state.filters, ...newFilters, page: 1 },
+      filters: { ...newFilters, page: 1 },
     }));
     get().fetchCharacters();
   },
