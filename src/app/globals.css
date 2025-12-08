@@ -120,3 +120,51 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* @layer base {
+  * {
+    @apply border-black dark:border-white;
+  }
+} */
+
+@layer utilities {
+  .neo-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .neo-shadow-sm {
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+  
+  .neo-shadow-lg {
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+  }
+  
+  .neo-shadow-xl {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .neo-hover {
+    @apply transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px];
+  }
+
+  .neo-hover:hover {
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .neo-hover-inverted {
+    @apply transition-all duration-200 hover:-translate-x-[8px] hover:-translate-y-[8px];
+  }
+
+  .neo-hover-inverted:hover {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .neo-active {
+    @apply transition-all duration-200 active:translate-x-[2px] active:translate-y-[2px];
+  }
+
+  .neo-active:active {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+  }
+}
