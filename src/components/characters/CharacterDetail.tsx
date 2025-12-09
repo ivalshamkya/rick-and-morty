@@ -151,12 +151,12 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
                 </div>
 
                 <div className="flex items-center gap-3 p-4 border-3 border-black bg-neutral-100">
-                  <Calendar className="h-6 w-6 shrink-0" />
+                  <Calendar className="h-6 w-6 shrink-0 text-neutral-900" />
                   <div>
-                    <p className="text-xs font-black uppercase text-neutral-700">
+                    <p className="text-xs font-black uppercase text-neutral-900">
                       Created
                     </p>
-                    <p className="text-sm font-bold">
+                    <p className="text-sm font-bold text-neutral-900">
                       {new Date(character.created).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
