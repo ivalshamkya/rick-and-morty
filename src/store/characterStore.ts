@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Character, CharacterFilters } from "@/types/characters";
+import { Character, CharacterFilters } from "@/types/character";
 import { characterAPI } from "@/lib/api";
 
 interface CharacterState {
