@@ -71,7 +71,7 @@ export default function CharacterCard({ character }: CharacterCardProps) {
             />
           </Button>
 
-          <div className="absolute top-3 right-3 bg-black dark:bg-white text-[#84d65a] dark:text-black px-3 py-1.5 border-3 border-[#84d65a] dark:border-black font-black text-xs uppercase flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#84d65a]">
+          <div className="absolute top-3 right-3 bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white px-3 py-1.5 border-3 border-[#84d65a] dark:border-black font-black text-xs uppercase flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#84d65a]">
             <Tv className="h-3 w-3" />
             {character.episode.length}
           </div>

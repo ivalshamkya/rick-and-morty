@@ -63,7 +63,7 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Card className="border-4 h-fit border-black bg-white dark:bg-neutral-900 neo-shadow-xl overflow-hidden">
+          <Card className="border-4 h-fit border-black bg-white pb-0 dark:bg-neutral-900 neo-shadow-xl overflow-hidden">
             <div className="relative w-full aspect-square">
               <Image
                 src={character.image}

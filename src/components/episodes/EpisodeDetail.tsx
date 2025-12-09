@@ -178,7 +178,7 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
                     href={`/characters/${character.id}`}
                     className="group"
                   >
-                    <Card className="overflow-hidden border-3 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-200 hover:shadow-[2px_2px_0px_0px_#84d65a]">
+                    <Card className="overflow-hidden border-3 gap-2 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-200 hover:shadow-[2px_2px_0px_0px_#84d65a]">
                       <div className="relative w-full aspect-square">
                         <Image
                           src={character.image}
@@ -188,8 +188,8 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
                           sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
                         />
                       </div>
-                      <div className="p-2">
-                        <p className="text-xs font-black uppercase truncate group-hover:text-[#00b5cc] transition-colors">
+                      <div className="px-2">
+                        <p className="text-base font-black uppercase truncate group-hover:text-[#00b5cc] transition-colors">
                           {character.name}
                         </p>
                       </div>
