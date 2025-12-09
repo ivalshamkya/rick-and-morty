@@ -16,7 +16,7 @@ interface CharacterCardProps {
 const statusColors = {
   Alive: "bg-[#84d65a] border-black text-black",
   Dead: "bg-[#ee5a6f] border-black text-white",
-  unknown: "bg-gray-400 border-black text-white",
+  unknown: "bg-neutral-400 border-black text-white",
 };
 
 export default function CharacterCard({ character }: CharacterCardProps) {
@@ -31,8 +31,8 @@ export default function CharacterCard({ character }: CharacterCardProps) {
 
   return (
     <Link href={`/characters/${character.id}`}>
-      <Card className="overflow-hidden cursor-pointer h-full border-4 border-black dark:border-white bg-white dark:bg-gray-900 neo-shadow-lg neo-hover">
-        <div className="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+      <Card className="overflow-hidden cursor-pointer h-full border-4 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow-lg neo-hover">
+        <div className="relative w-full aspect-square bg-neutral-100 dark:bg-neutral-800">
           <Image
             src={character.image}
             alt={character.name}
@@ -48,7 +48,7 @@ export default function CharacterCard({ character }: CharacterCardProps) {
             className={`absolute top-3 left-3 h-10 w-10 border-3 border-black dark:border-white neo-shadow-sm z-10 ${
               favorite
                 ? "bg-[#ee5a6f] hover:bg-[#e84a5f]"
-                : "bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800"
+                : "bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             }`}
           >
             <Heart
@@ -67,7 +67,7 @@ export default function CharacterCard({ character }: CharacterCardProps) {
           </div>
         </div>
 
-        <CardContent className="px-5 bg-white dark:bg-gray-900 space-y-4">
+        <CardContent className="px-5 bg-white dark:bg-neutral-900 space-y-4">
           <h3 className="font-black text-xl leading-tight uppercase line-clamp-2 tracking-tight">
             {character.name}
           </h3>
@@ -80,7 +80,7 @@ export default function CharacterCard({ character }: CharacterCardProps) {
             >
               {character.status}
             </Badge>
-            <Badge className="bg-white dark:bg-gray-900 border-3 border-black dark:border-white text-black dark:text-white font-black uppercase text-xs px-3 py-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
+            <Badge className="bg-white dark:bg-neutral-900 border-3 border-black dark:border-white text-black dark:text-white font-black uppercase text-xs px-3 py-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
               {character.species}
             </Badge>
             {character.type && (
@@ -90,7 +90,7 @@ export default function CharacterCard({ character }: CharacterCardProps) {
             )}
           </div>
 
-          <div className="flex items-center gap-2 p-2 border-3 border-black dark:border-white bg-gray-50 dark:bg-gray-800">
+          <div className="flex items-center gap-2 p-2 border-3 border-black dark:border-white bg-neutral-50 dark:bg-neutral-800">
             <UsersIcon className="h-4 w-4 shrink-0 font-bold" />
             <span className="text-xs font-black uppercase tracking-wide">
               {character.gender}

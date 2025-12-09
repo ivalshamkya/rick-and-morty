@@ -1,14 +1,23 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { useCharacterStore } from '@/store/characterStore';
-import CharacterCard from './CharacterCard';
-import Pagination from './Pagination';
-import { Skeleton } from '@/components/ui/skeleton';
-import { AlertCircle } from 'lucide-react';
+import { useEffect } from "react";
+import { useCharacterStore } from "@/store/characterStore";
+import CharacterCard from "./CharacterCard";
+import Pagination from "./Pagination";
+import { Skeleton } from "@/components/ui/skeleton";
+import { AlertCircle } from "lucide-react";
+import Image from "next/image";
 
 export default function CharacterList() {
-  const { characters, loading, error, fetchCharacters, totalPages, currentPage, setPage } = useCharacterStore();
+  const {
+    characters,
+    loading,
+    error,
+    fetchCharacters,
+    totalPages,
+    currentPage,
+    setPage,
+  } = useCharacterStore();
 
   useEffect(() => {
     fetchCharacters();
@@ -16,7 +25,7 @@ export default function CharacterList() {
 
   const handlePageChange = (page: number) => {
     setPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   if (loading) {
@@ -25,7 +34,7 @@ export default function CharacterList() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {[...Array(8)].map((_, i) => (
             <div key={i} className="space-y-3">
-              <Skeleton className="w-full aspect-square rounded-2xl" />
+              <Skeleton className="w-full aspect-square rounded-2xl bg-neutral-900/50 neo-shadow-lg" />
               <Skeleton className="h-6 w-3/4 rounded-lg" />
               <Skeleton className="h-4 w-1/2 rounded-lg" />
             </div>
@@ -38,11 +47,16 @@ export default function CharacterList() {
   if (error) {
     return (
       <div className="text-center py-20">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 dark:bg-red-900/20 mb-4">
-          <AlertCircle className="h-8 w-8 text-red-600 dark:text-red-400" />
-        </div>
-        <h3 className="text-xl font-semibold mb-2">Oops! Something went wrong</h3>
-        <p className="text-muted-foreground">{error}</p>
+        <Image
+          src="/broken-gun.png"
+          alt="Rick and Morty Broken Gun"
+          width={400}
+          height={100}
+          className="mx-auto mb-4 hover:scale-105 transition-transform"
+        />
+        <h3 className="text-xl font-semibold mb-2">
+          Interdimensional cable's down!
+        </h3>
       </div>
     );
   }
@@ -52,7 +66,9 @@ export default function CharacterList() {
       <div className="text-center py-20">
         <div className="text-6xl mb-4">🔍</div>
         <h3 className="text-xl font-semibold mb-2">No characters found</h3>
-        <p className="text-muted-foreground">Try adjusting your search or filters</p>
+        <p className="text-muted-foreground">
+          Try adjusting your search or filters
+        </p>
       </div>
     );
   }

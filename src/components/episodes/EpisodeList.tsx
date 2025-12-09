@@ -1,14 +1,23 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { useEpisodeStore } from '@/store/episodeStore';
-import EpisodeCard from './EpisodeCard';
-import Pagination from '../characters/Pagination';
-import { Skeleton } from '@/components/ui/skeleton';
-import { AlertCircle } from 'lucide-react';
+import { useEffect } from "react";
+import { useEpisodeStore } from "@/store/episodeStore";
+import EpisodeCard from "./EpisodeCard";
+import Pagination from "../characters/Pagination";
+import { Skeleton } from "@/components/ui/skeleton";
+import { AlertCircle } from "lucide-react";
+import Image from "next/image";
 
 export default function EpisodeList() {
-  const { episodes, loading, error, fetchEpisodes, totalPages, currentPage, setPage } = useEpisodeStore();
+  const {
+    episodes,
+    loading,
+    error,
+    fetchEpisodes,
+    totalPages,
+    currentPage,
+    setPage,
+  } = useEpisodeStore();
 
   useEffect(() => {
     fetchEpisodes();
@@ -16,7 +25,7 @@ export default function EpisodeList() {
 
   const handlePageChange = (page: number) => {
     setPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   if (loading) {
@@ -33,24 +42,19 @@ export default function EpisodeList() {
     );
   }
 
-  if (error) {
+  if (episodes.length == 0 || error) {
     return (
       <div className="text-center py-20">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 dark:bg-red-900/20 mb-4">
-          <AlertCircle className="h-8 w-8 text-red-600 dark:text-red-400" />
-        </div>
-        <h3 className="text-xl font-semibold mb-2">Oops! Something went wrong</h3>
-        <p className="text-muted-foreground">{error}</p>
-      </div>
-    );
-  }
-
-  if (episodes.length === 0) {
-    return (
-      <div className="text-center py-20">
-        <div className="text-6xl mb-4">📺</div>
-        <h3 className="text-xl font-semibold mb-2">No episodes found</h3>
-        <p className="text-muted-foreground">Try adjusting your search</p>
+        <Image
+          src="/broken-gun.png"
+          alt="Rick and Morty Broken Gun"
+          width={400}
+          height={100}
+          className="mx-auto mb-4 hover:scale-105 transition-transform"
+        />
+        <h3 className="text-xl font-semibold mb-2">
+          Oh man, Rick! The portal gun's broken!
+        </h3>
       </div>
     );
   }

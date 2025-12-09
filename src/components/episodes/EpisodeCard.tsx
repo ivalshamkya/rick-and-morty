@@ -22,7 +22,7 @@ export default function EpisodeCard({ episode }: EpisodeCardProps) {
 
   return (
     <Link href={`/episodes/${episode.id}`}>
-      <Card className="overflow-hidden cursor-pointer h-full border-4 border-black dark:border-white bg-white dark:bg-gray-900 neo-shadow-lg neo-hover">
+      <Card className="overflow-hidden cursor-pointer h-full border-4 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow-lg neo-hover">
         <CardContent className="p-6 space-y-4">
           {/* Episode Code Badge */}
           <div className="flex items-center justify-between">
