@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick and Morty Character Explorer
 
-## Getting Started
+A Next.js web application to browse Rick and Morty characters and episodes with search, filters, favorites, and dark mode. Built with TypeScript, Tailwind CSS, and Zustand.
 
-First, run the development server:
+**Total Time**: Around 15 hours
+
+**Breakdown by Task**:
+- Initial Setup & Configuration: 20 min
+- UI Design & Components: 6 hours
+- API Integration & State Management: 3 hours
+- Features (Favorites, Dark Mode, Filters): 4 hours
+- Testing: 1.5 hour
+- Deployment & CI/CD: 30 min
+
+**Live Demo**: https://transportech-ai.vercel.app
+
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone and install
+git clone https://github.com/ivalshamkya/rick-and-morty.git
+
+cd rick-and-morty
+
+pnpm install
+
+# Run locally
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Next.js • Axios • Tailwind CSS • Shadcn • Zustand • Vitest
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+```bash
+pnpm dev          # Development
+pnpm build        # Production build
+pnpm test         # Run tests
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Note: This is an estimated time tracking as the project was not completed in a single continuous session. Only active coding time is included.
