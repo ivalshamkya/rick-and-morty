@@ -3,7 +3,7 @@ import EpisodeFilters from '@/components/episodes/EpisodeFilters';
 
 export default function EpisodesPage() {
   return (
-    <main className="min-h-screen bg-[#f0f5f9] dark:bg-gray-950">
+    <main className="min-h-screen bg-[#f0f5f9] dark:bg-neutral-800">
       <div className="container mx-auto px-4 py-12">
         <div className="mb-12 text-center">
           <h1 className="text-5xl md:text-7xl font-black mb-4 uppercase tracking-tight">

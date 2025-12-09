@@ -70,7 +70,7 @@ export default function EpisodeFilters() {
               placeholder="Search by name..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              className="pl-12 h-14 text-base border-3 border-black dark:border-white bg-white dark:bg-gray-900 placeholder:text-black/60 dark:placeholder:text-white/60 font-bold neo-shadow"
+              className="pl-12 h-14 text-base border-3 border-black dark:border-white bg-white dark:bg-neutral-900 placeholder:text-black/60 dark:placeholder:text-white/60 font-bold neo-shadow"
             />
           </div>
 
@@ -80,7 +80,7 @@ export default function EpisodeFilters() {
               placeholder="Episode code (e.g., S01E01)..."
               value={episodeInput}
               onChange={(e) => setEpisodeInput(e.target.value.toUpperCase())}
-              className="h-14 text-base border-3 border-black dark:border-white bg-white dark:bg-gray-900 placeholder:text-black/60 dark:placeholder:text-white/60 font-bold neo-shadow"
+              className="h-14 text-base border-3 border-black dark:border-white bg-white dark:bg-neutral-900 placeholder:text-black/60 dark:placeholder:text-white/60 font-bold neo-shadow"
             />
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function EpisodeFilters() {
               type="button"
               variant="outline"
               onClick={handleReset}
-              className="h-12 px-6 gap-2 border-3 border-black dark:border-white bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 font-black neo-shadow neo-hover"
+              className="h-12 px-6 gap-2 border-3 border-black dark:border-white bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-black neo-shadow neo-active"
             >
               <X className="h-4 w-4" />
               RESET

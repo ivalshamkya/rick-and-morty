@@ -24,7 +24,7 @@ interface CharacterDetailProps {
 const statusColors = {
   Alive: "bg-[#84d65a] border-black text-black",
   Dead: "bg-[#ee5a6f] border-black text-white",
-  unknown: "bg-gray-400 border-black text-white",
+  unknown: "bg-neutral-400 border-black text-white",
 };
 
 export default function CharacterDetail({ character }: CharacterDetailProps) {
@@ -32,13 +32,13 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
   const favorite = isFavorite(character.id);
 
   return (
-    <div className="min-h-screen bg-[#f0f5f9] dark:bg-gray-950">
+    <div className="min-h-screen bg-[#f0f5f9] dark:bg-neutral-700">
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-8">
           <Link href="/">
             <Button
               variant="outline"
-              className="h-12 px-6 border-3 border-black dark:border-white bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 font-black neo-shadow neo-hover"
+              className="h-12 px-6 border-3 border-black dark:border-white bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-black neo-shadow neo-active"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
               BACK TO LIST
@@ -47,19 +47,23 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
 
           <Button
             onClick={() => toggleFavorite(character.id)}
-            className={`h-12 px-6 border-3 border-black dark:border-white font-black neo-shadow neo-hover ${
+            className={`h-12 px-6 border-3 border-black dark:border-white text-neutral-900 dark:text-white font-black neo-shadow neo-active ${
               favorite
-                ? "bg-[#ee5a6f] hover:bg-[#e84a5f] text-white"
-                : "bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800"
+                ? "bg-[#ee5a6f] hover:bg-[#e84a5f]"
+                : "bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             }`}
           >
-            <Heart className={`h-5 w-5 mr-2 ${favorite ? "fill-white" : ""}`} />
+            <Heart
+              className={`h-5 w-5 mr-2 ${
+                favorite ? "fill-white" : "fill-white"
+              }`}
+            />
             {favorite ? "REMOVE FROM FAVORITES" : "ADD TO FAVORITES"}
           </Button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Card className="border-4 h-fit border-black bg-white neo-shadow-xl overflow-hidden">
+          <Card className="border-4 h-fit border-black bg-white dark:bg-neutral-900 neo-shadow-xl overflow-hidden">
             <div className="relative w-full aspect-square">
               <Image
                 src={character.image}
@@ -75,7 +79,7 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
           {/* Right Column - Info */}
           <div className="space-y-6">
             {/* Name & Status */}
-            <Card className="border-4 border-black bg-white neo-shadow-lg p-6">
+            <Card className="border-4 border-black bg-white dark:bg-neutral-900 neo-shadow-lg p-6">
               <h1 className="text-4xl md:text-5xl font-black uppercase mb-4 leading-tight">
                 {character.name}
               </h1>
@@ -98,7 +102,7 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
               </div>
             </Card>
 
-            <Card className="border-4 border-black bg-white neo-shadow-lg">
+            <Card className="border-4 border-black bg-white dark:bg-neutral-900 neo-shadow-lg">
               <CardContent className="p-6 space-y-4">
                 <h2 className="text-2xl font-black uppercase mb-4 border-b-3 border-black pb-2">
                   Personal Info
@@ -107,7 +111,7 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
                 <div className="flex items-center gap-3 p-4 border-3 border-black bg-[#f9ca24]">
                   <Users className="h-6 w-6 shrink-0" />
                   <div>
-                    <p className="text-xs font-black uppercase text-gray-700">
+                    <p className="text-xs font-black uppercase text-neutral-700">
                       Gender
                     </p>
                     <p className="text-lg font-black">{character.gender}</p>
@@ -146,10 +150,10 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-4 border-3 border-black bg-gray-100">
+                <div className="flex items-center gap-3 p-4 border-3 border-black bg-neutral-100">
                   <Calendar className="h-6 w-6 shrink-0" />
                   <div>
-                    <p className="text-xs font-black uppercase text-gray-700">
+                    <p className="text-xs font-black uppercase text-neutral-700">
                       Created
                     </p>
                     <p className="text-sm font-bold">
@@ -164,7 +168,7 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
               </CardContent>
             </Card>
 
-            <Card className="border-4 border-black bg-white neo-shadow-lg">
+            <Card className="border-4 border-black bg-white dark:bg-neutral-900 neo-shadow-lg">
               <CardContent className="p-6">
                 <h2 className="text-2xl font-black uppercase mb-4 border-b-3 border-black pb-2">
                   Episode Appearances
@@ -173,12 +177,14 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
                   {character.episode.map((ep, index) => {
                     const episodeNum = ep.split("/").pop();
                     return (
-                      <div
-                        key={ep}
-                        className="p-3 border-3 border-black bg-white text-center font-black hover:bg-[#84d65a] transition-colors"
-                      >
-                        EP {episodeNum}
-                      </div>
+                      <Link key={ep} href={`/episodes/${episodeNum}`}>
+                        <div
+                          key={ep}
+                          className="p-3 border-3 border-black bg-neutral-50 dark:bg-neutral-600 text-center font-black hover:bg-[#84d65a] dark:hover:bg-[#48d700] transition-colors cursor-pointer neo-shadow-sm"
+                        >
+                          EP {episodeNum}
+                        </div>
+                      </Link>
                     );
                   })}
                 </div>

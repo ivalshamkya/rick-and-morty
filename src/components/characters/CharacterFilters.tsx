@@ -145,7 +145,7 @@ export default function CharacterFilters() {
   ) as Array<[string, string]>;
 
   return (
-    <div className="mb-12 sticky top-32 z-40">
+    <div className="mb-12">
       <form onSubmit={handleSearch} className="space-y-5">
         <div className="flex flex-row gap-4">
           <div className="relative flex-1">
@@ -175,12 +175,12 @@ export default function CharacterFilters() {
                   type="button"
                   variant="outline"
                   size="lg"
-                  className="h-14 px-6 gap-2 relative rounded-xl border-3 border-black bg-white hover:bg-gray-100 font-black neo-shadow neo-active"
+                  className="h-14 px-6 gap-2 relative rounded-xl border-3 border-black bg-[#84d65a] dark:bg-[#6db649] hover:bg-[#54af27] dark:hover:bg-[#5b943e] font-black neo-shadow neo-active"
                 >
                   <SlidersHorizontal className="h-5 w-5" />
                   <span className="hidden sm:inline">FILTERS</span>
                   {activeFilterCount > 0 && (
-                    <div className="absolute -top-2 -right-2 h-7 w-7 flex items-center justify-center rounded-full border-3 border-black bg-[#84d65a] text-black text-xs font-black neo-shadow-sm">
+                    <div className="absolute -top-2 -right-2 h-7 w-7 flex items-center justify-center rounded-full border-3 border-white dark:border-black bg-neutral-900 dark:bg-white text-white dark:text-black text-xs font-black neo-shadow-sm">
                       {activeFilterCount}
                     </div>
                   )}

@@ -46,7 +46,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
   };
 
   return (
-    <div className="flex items-center justify-center gap-2 flex-wrap">
+    <div className="flex items-center justify-center gap-2 flex-wrap mt-14">
       {/* First Page */}
       <Button
         variant="outline"

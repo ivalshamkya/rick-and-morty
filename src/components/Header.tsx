@@ -54,7 +54,7 @@ export default function Header() {
             <Button
               variant="outline"
               size="icon"
-              className="h-12 w-12 border-3 border-black dark:border-white bg-[#f9ca24] hover:bg-[#f6b93b] dark:bg-[#f9ca24] dark:hover:bg-[#f6b93b] neo-shadow neo-hover"
+              className="h-12 w-12 border-3 border-black dark:border-white bg-[#f9ca24] hover:bg-[#f6b93b] dark:bg-[#f9ca24] dark:hover:bg-[#f6b93b] neo-shadow neo-active"
             >
               <Tv className="h-5 w-5 text-black" />
             </Button>
@@ -64,7 +64,7 @@ export default function Header() {
             <Button
               variant="outline"
               size="icon"
-              className="h-12 w-12 border-3 border-black dark:border-white bg-[#ee5a6f] hover:bg-[#e84a5f] dark:bg-[#ee5a6f] dark:hover:bg-[#e84a5f] neo-shadow neo-hover relative"
+              className="h-12 w-12 border-3 border-black dark:border-white bg-[#ee5a6f] hover:bg-[#e84a5f] dark:bg-[#ee5a6f] dark:hover:bg-[#e84a5f] neo-shadow neo-active relative"
             >
               <Heart className="h-5 w-5 text-white fill-white" />
               {favorites.length > 0 && (
@@ -79,7 +79,7 @@ export default function Header() {
             variant="outline"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="h-12 w-12 border-3 border-black dark:border-white bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 neo-shadow neo-hover"
+            className="h-12 w-12 border-3 border-black dark:border-white bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 neo-shadow neo-active"
           >
             {theme === "dark" ? (
               <Sun className="h-5 w-5" />
