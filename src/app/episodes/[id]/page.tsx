@@ -8,6 +8,8 @@ interface PageProps {
   };
 }
 
+export const runtime = 'edge';
+
 export default async function EpisodeDetailPage({ params }: PageProps) {
   try {
     const id = (await params).id;
