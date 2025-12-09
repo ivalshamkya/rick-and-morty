@@ -1,6 +1,6 @@
-import { create } from 'zustand';
-import { Episode, EpisodeFilters } from '@/types/episode';
-import { episodeAPI } from '@/lib/api';
+import { create } from "zustand";
+import { Episode, EpisodeFilters } from "@/types/episode";
+import { episodeAPI } from "@/lib/api";
 
 interface EpisodeState {
   episodes: Episode[];
@@ -36,7 +36,7 @@ export const useEpisodeStore = create<EpisodeState>((set, get) => ({
       });
     } catch (error: any) {
       set({
-        error: error.response?.data?.error || 'Failed to fetch episodes',
+        error: error.response?.data?.error || "Failed to fetch episodes",
         loading: false,
         episodes: [],
       });

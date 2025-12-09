@@ -56,7 +56,6 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
   return (
     <div className="min-h-screen bg-[#f0f5f9] dark:bg-neutral-800">
       <div className="container mx-auto px-4 py-8">
-        {/* Back Button */}
         <Link href="/episodes">
           <Button
             variant="outline"
@@ -67,12 +66,9 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
           </Button>
         </Link>
 
-        {/* Episode Info */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-          {/* Main Info Card */}
           <Card className="lg:col-span-2 border-4 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow-xl">
             <CardContent className="p-8 space-y-6">
-              {/* Episode Badge */}
               <div className="flex items-center gap-3 flex-wrap">
                 <Badge className="bg-[#00b5cc] border-3 border-black dark:border-white text-white font-black uppercase text-lg px-6 py-3">
                   {episode.episode}
@@ -83,12 +79,10 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
                 </div>
               </div>
 
-              {/* Episode Title */}
               <h1 className="text-4xl md:text-5xl font-black uppercase leading-tight">
                 {episode.name}
               </h1>
 
-              {/* Air Date */}
               <div className="flex items-center gap-3 p-4 border-3 border-black dark:border-white bg-[#84d65a]">
                 <Calendar className="h-6 w-6 shrink-0 text-black" />
                 <div>
@@ -97,7 +91,6 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
                 </div>
               </div>
 
-              {/* Created Date */}
               <div className="flex items-center gap-3 p-4 border-3 border-black dark:border-white bg-neutral-100 dark:bg-neutral-800">
                 <Calendar className="h-6 w-6 shrink-0" />
                 <div>
@@ -116,7 +109,6 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
             </CardContent>
           </Card>
 
-          {/* Stats Card */}
           <Card className="border-4 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow-xl">
             <CardContent className="p-8">
               <h2 className="text-2xl font-black uppercase mb-6 border-b-3 border-black dark:border-white pb-3">
@@ -124,7 +116,6 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
               </h2>
               
               <div className="space-y-4">
-                {/* Character Count */}
                 <div className="p-4 border-3 border-black dark:border-white bg-[#ee5a6f]">
                   <div className="flex items-center gap-3">
                     <Users className="h-8 w-8 text-white" />
@@ -139,7 +130,6 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
                   </div>
                 </div>
 
-                {/* Episode Number */}
                 <div className="p-4 border-3 border-black dark:border-white bg-[#00b5cc]">
                   <div className="flex items-center gap-3">
                     <Tv className="h-8 w-8 text-white" />
@@ -158,7 +148,6 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
           </Card>
         </div>
 
-        {/* Characters Section */}
         <Card className="border-4 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow-xl">
           <CardContent className="p-8">
             <h2 className="text-3xl font-black uppercase mb-6 border-b-3 border-black dark:border-white pb-3">
@@ -189,7 +178,7 @@ export default function EpisodeDetail({ episode }: EpisodeDetailProps) {
                     href={`/characters/${character.id}`}
                     className="group"
                   >
-                    <Card className="overflow-hidden border-3 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 hover:shadow-[2px_2px_0px_0px_#84d65a]">
+                    <Card className="overflow-hidden border-3 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-200 hover:shadow-[2px_2px_0px_0px_#84d65a]">
                       <div className="relative w-full aspect-square">
                         <Image
                           src={character.image}

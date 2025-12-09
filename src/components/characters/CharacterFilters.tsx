@@ -80,19 +80,19 @@ export default function CharacterFilters() {
 
   const handleApplyFilters = () => {
     const newFilters = { ...filters };
-    
+
     if (localFilters.status) {
       newFilters.status = localFilters.status;
     } else {
       delete newFilters.status;
     }
-    
+
     if (localFilters.species) {
       newFilters.species = localFilters.species;
     } else {
       delete newFilters.species;
     }
-    
+
     if (localFilters.gender) {
       newFilters.gender = localFilters.gender;
     } else {
@@ -115,7 +115,7 @@ export default function CharacterFilters() {
     e.stopPropagation();
 
     const newFilters = { ...filters };
-    
+
     if (filterKey === "name") {
       setSearchInput("");
       delete newFilters.name;

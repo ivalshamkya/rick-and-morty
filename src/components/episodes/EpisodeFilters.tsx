@@ -1,39 +1,39 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useEpisodeStore } from '@/store/episodeStore';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Search, X } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { useState } from "react";
+import { useEpisodeStore } from "@/store/episodeStore";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Search, X } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default function EpisodeFilters() {
   const { filters, setFilters, resetFilters } = useEpisodeStore();
-  const [searchInput, setSearchInput] = useState(filters.name || '');
-  const [episodeInput, setEpisodeInput] = useState(filters.episode || '');
+  const [searchInput, setSearchInput] = useState(filters.name || "");
+  const [episodeInput, setEpisodeInput] = useState(filters.episode || "");
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const newFilters = { ...filters };
-    
+
     if (searchInput) {
       newFilters.name = searchInput;
     } else {
       delete newFilters.name;
     }
-    
+
     if (episodeInput) {
       newFilters.episode = episodeInput;
     } else {
       delete newFilters.episode;
     }
-    
+
     setFilters(newFilters);
   };
 
   const handleReset = () => {
-    setSearchInput('');
-    setEpisodeInput('');
+    setSearchInput("");
+    setEpisodeInput("");
     resetFilters();
   };
 
@@ -42,21 +42,23 @@ export default function EpisodeFilters() {
     e.stopPropagation();
 
     const newFilters = { ...filters };
-    
-    if (filterKey === 'name') {
-      setSearchInput('');
+
+    if (filterKey === "name") {
+      setSearchInput("");
       delete newFilters.name;
-    } else if (filterKey === 'episode') {
-      setEpisodeInput('');
+    } else if (filterKey === "episode") {
+      setEpisodeInput("");
       delete newFilters.episode;
     }
 
     setFilters(newFilters);
   };
 
-  const activeFilterCount = [filters.name, filters.episode].filter(Boolean).length;
+  const activeFilterCount = [filters.name, filters.episode].filter(
+    Boolean
+  ).length;
   const activeFiltersArray = Object.entries(filters).filter(
-    ([key, value]) => value && key !== 'page'
+    ([key, value]) => value && key !== "page"
   ) as Array<[string, string]>;
 
   return (

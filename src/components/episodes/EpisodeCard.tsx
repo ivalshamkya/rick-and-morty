@@ -9,7 +9,6 @@ interface EpisodeCardProps {
 }
 
 export default function EpisodeCard({ episode }: EpisodeCardProps) {
-  // Parse episode code (e.g., "S01E01" -> Season 1, Episode 1)
   const parseEpisode = (code: string) => {
     const match = code.match(/S(\d+)E(\d+)/);
     if (match) {
@@ -24,7 +23,6 @@ export default function EpisodeCard({ episode }: EpisodeCardProps) {
     <Link href={`/episodes/${episode.id}`}>
       <Card className="overflow-hidden cursor-pointer h-full border-4 border-black dark:border-white bg-white dark:bg-neutral-900 neo-shadow-lg neo-hover">
         <CardContent className="p-6 space-y-4">
-          {/* Episode Code Badge */}
           <div className="flex items-center justify-between">
             <Badge className="bg-[#00b5cc] border-3 border-black dark:border-white text-white font-black uppercase text-sm px-4 py-2">
               {episode.episode}
@@ -35,23 +33,20 @@ export default function EpisodeCard({ episode }: EpisodeCardProps) {
             </div>
           </div>
 
-          {/* Episode Name */}
-          <h3 className="font-black text-xl leading-tight uppercase line-clamp-2 min-h-[3.5rem]">
+          <h3 className="font-black text-xl leading-tight uppercase line-clamp-2 min-h-14">
             {episode.name}
           </h3>
 
-          {/* Air Date */}
           <div className="flex items-center gap-2 p-3 border-3 border-black dark:border-white bg-[#f9ca24]">
-            <Calendar className="h-5 w-5 flex-shrink-0 text-black" />
+            <Calendar className="h-5 w-5 shrink-0 text-black" />
             <div>
               <p className="text-xs font-black uppercase text-black">Air Date</p>
               <p className="text-sm font-bold text-black">{episode.air_date}</p>
             </div>
           </div>
 
-          {/* Character Count */}
           <div className="flex items-center gap-2 p-3 border-3 border-black dark:border-white bg-[#84d65a]">
-            <Users className="h-5 w-5 flex-shrink-0 text-black" />
+            <Users className="h-5 w-5 shrink-0 text-black" />
             <div>
               <p className="text-xs font-black uppercase text-black">Characters</p>
               <p className="text-lg font-black text-black">{episode.characters.length}</p>

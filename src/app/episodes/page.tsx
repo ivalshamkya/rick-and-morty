@@ -1,5 +1,5 @@
-import EpisodeList from '@/components/episodes/EpisodeList';
-import EpisodeFilters from '@/components/episodes/EpisodeFilters';
+import EpisodeList from "@/components/episodes/EpisodeList";
+import EpisodeFilters from "@/components/episodes/EpisodeFilters";
 
 export default function EpisodesPage() {
   return (
@@ -15,7 +15,7 @@ export default function EpisodesPage() {
             All Rick and Morty Episodes
           </p>
         </div>
-        
+
         <EpisodeFilters />
         <EpisodeList />
       </div>
