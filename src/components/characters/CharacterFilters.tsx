@@ -145,17 +145,17 @@ export default function CharacterFilters() {
   ) as Array<[string, string]>;
 
   return (
-    <div className="mb-12">
+    <div className="mb-12 sticky top-32 z-40">
       <form onSubmit={handleSearch} className="space-y-5">
         <div className="flex flex-row gap-4">
           <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black h-5 w-5" />
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black dark:text-neutral-300 h-5 w-5" />
             <Input
               type="text"
               placeholder="Search characters..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              className="pl-12 h-14 text-base rounded-xl border-3 border-black bg-white placeholder:text-black/60 text-black font-bold neo-shadow focus-visible:ring-0 focus-visible:ring-offset-0"
+              className="pl-12 h-14 text-base rounded-xl border-3 border-black bg-white dark:bg-neutral-700 placeholder:text-black/60 text-black dark:placeholder:text-neutral-300 dark:text-white font-bold neo-shadow focus-visible:ring-0 focus-visible:ring-offset-0"
             />
           </div>
 
@@ -187,7 +187,7 @@ export default function CharacterFilters() {
                 </Button>
               </DialogTrigger>
 
-              <DialogContent className="sm:max-w-[480px] p-0 gap-0 overflow-hidden rounded-xl border-3 border-black bg-white neo-shadow-xl">
+              <DialogContent className="sm:max-w-[480px] p-0 gap-0 overflow-hidden rounded-xl border-3 border-black bg-white dark:bg-neutral-900 neo-shadow-xl">
                 <DialogHeader className="px-6 pt-6 pb-4 border-b-4 border-black bg-[#00b5cc]">
                   <DialogTitle className="text-3xl font-black uppercase text-white slime-text">
                     Filters
@@ -308,7 +308,7 @@ export default function CharacterFilters() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 px-6 py-4 border-t-4 border-black bg-gray-100">
+                <div className="flex gap-4 px-6 py-4 border-t-4 border-black bg-gray-100 dark:bg-neutral-800">
                   <Button
                     type="button"
                     variant="outline"

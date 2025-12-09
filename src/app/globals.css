@@ -135,11 +135,11 @@
   .neo-shadow-sm {
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
   }
-  
+
   .neo-shadow-lg {
     box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
   }
-  
+
   .neo-shadow-xl {
     box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
   }
@@ -166,5 +166,19 @@
 
   .neo-active:active {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .neo-hover:hover:not(:disabled) {
+    box-shadow: 2px 2px 0px 0px #84d65a;
+  }
+
+  .neo-active:active:not(:disabled) {
+    @apply translate-x-[4px] translate-y-[4px];
+    box-shadow: 0px 0px 0px 0px #84d65a;
+  }
+
+  .slime-text {
+    text-shadow: 3px 3px 0px #84d65a, -1px -1px 0px #84d65a,
+      1px -1px 0px #84d65a, -1px 1px 0px #84d65a;
   }
 }

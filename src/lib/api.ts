@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { Character, CharacterResponse, CharacterFilters } from '@/types/characters';
+import { Character, CharacterResponse, CharacterFilters } from '@/types/character';
+import { Episode, EpisodeResponse, EpisodeFilters } from '@/types/episode';
 
 const API_BASE_URL = 'https://rickandmortyapi.com/api';
 
@@ -27,6 +28,37 @@ export const characterAPI = {
       return data;
     } catch (error) {
       throw new Error('Character not found');
+    }
+  },
+
+  getMultiple: async (ids: number[]): Promise<Character[]> => {
+    try {
+      const { data } = await api.get<Character[]>(`/character/${ids.join(',')}`);
+      return Array.isArray(data) ? data : [data];
+    } catch (error) {
+      throw new Error('Characters not found');
+    }
+  },
+};
+
+export const episodeAPI = {
+  getAll: async (filters: EpisodeFilters = {}): Promise<EpisodeResponse> => {
+    const params = new URLSearchParams();
+    
+    if (filters.name) params.append('name', filters.name);
+    if (filters.episode) params.append('episode', filters.episode);
+    if (filters.page) params.append('page', filters.page.toString());
+
+    const { data } = await api.get<EpisodeResponse>(`/episode?${params.toString()}`);
+    return data;
+  },
+
+  getById: async (id: number): Promise<Episode> => {
+    try {
+      const { data } = await api.get<Episode>(`/episode/${id}`);
+      return data;
+    } catch (error) {
+      throw new Error('Episode not found');
     }
   },
 };
