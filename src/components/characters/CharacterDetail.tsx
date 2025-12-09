@@ -76,9 +76,7 @@ export default function CharacterDetail({ character }: CharacterDetailProps) {
             </div>
           </Card>
 
-          {/* Right Column - Info */}
           <div className="space-y-6">
-            {/* Name & Status */}
             <Card className="border-4 border-black bg-white dark:bg-neutral-900 neo-shadow-lg p-6">
               <h1 className="text-4xl md:text-5xl font-black uppercase mb-4 leading-tight">
                 {character.name}

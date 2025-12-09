@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation';
-import EpisodeDetail from '@/components/episodes/EpisodeDetail';
-import { episodeAPI } from '@/lib/api';
+import { notFound } from "next/navigation";
+import EpisodeDetail from "@/components/episodes/EpisodeDetail";
+import { episodeAPI } from "@/lib/api";
 
 interface PageProps {
   params: {

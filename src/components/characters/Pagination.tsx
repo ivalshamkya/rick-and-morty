@@ -47,7 +47,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
 
   return (
     <div className="flex items-center justify-center gap-2 flex-wrap mt-14">
-      {/* First Page */}
       <Button
         variant="outline"
         size="icon"
@@ -58,7 +57,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         <ChevronsLeft className="h-5 w-5" />
       </Button>
 
-      {/* Previous Page */}
       <Button
         variant="outline"
         size="icon"
@@ -69,7 +67,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         <ChevronLeft className="h-5 w-5" />
       </Button>
 
-      {/* Page Numbers */}
       {getPageNumbers().map((page, index) => (
         <div key={index}>
           {page === '...' ? (
@@ -92,7 +89,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         </div>
       ))}
 
-      {/* Next Page */}
       <Button
         variant="outline"
         size="icon"
@@ -103,7 +99,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         <ChevronRight className="h-5 w-5" />
       </Button>
 
-      {/* Last Page */}
       <Button
         variant="outline"
         size="icon"
@@ -114,7 +109,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         <ChevronsRight className="h-5 w-5" />
       </Button>
 
-      {/* Page Info */}
       <div className="hidden sm:flex items-center gap-2 ml-4 px-4 py-2 border-3 border-black dark:border-white bg-[#84d65a] font-black text-sm">
         Page {currentPage} of {totalPages}
       </div>

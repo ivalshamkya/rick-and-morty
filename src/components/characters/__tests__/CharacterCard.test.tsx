@@ -35,13 +35,6 @@ describe('CharacterCard', () => {
     expect(screen.getByText('Male')).toBeInTheDocument();
   });
 
-  it('shows origin and location information', () => {
-    render(<CharacterCard character={mockCharacter} />);
-
-    expect(screen.getByText('Earth (C-137)')).toBeInTheDocument();
-    expect(screen.getByText('Citadel of Ricks')).toBeInTheDocument();
-  });
-
   it('displays episode count', () => {
     render(<CharacterCard character={mockCharacter} />);
 

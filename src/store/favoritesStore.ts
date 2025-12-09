@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface FavoritesState {
   favorites: number[];
@@ -25,7 +25,7 @@ export const useFavoritesStore = create<FavoritesState>()(
       },
     }),
     {
-      name: 'rick-morty-favorites',
+      name: "rick-morty-favorites",
     }
   )
 );

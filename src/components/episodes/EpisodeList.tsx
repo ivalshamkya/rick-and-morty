@@ -5,7 +5,6 @@ import { useEpisodeStore } from "@/store/episodeStore";
 import EpisodeCard from "./EpisodeCard";
 import Pagination from "../characters/Pagination";
 import { Skeleton } from "@/components/ui/skeleton";
-import { AlertCircle } from "lucide-react";
 import Image from "next/image";
 
 export default function EpisodeList() {

@@ -5,7 +5,6 @@ import { useCharacterStore } from "@/store/characterStore";
 import CharacterCard from "./CharacterCard";
 import Pagination from "./Pagination";
 import { Skeleton } from "@/components/ui/skeleton";
-import { AlertCircle } from "lucide-react";
 import Image from "next/image";
 
 export default function CharacterList() {
