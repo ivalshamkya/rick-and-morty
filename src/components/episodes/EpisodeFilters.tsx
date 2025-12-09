@@ -72,7 +72,7 @@ export default function EpisodeFilters() {
               placeholder="Search by name..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              className="pl-12 h-14 text-base border-3 border-black dark:border-white bg-white dark:bg-neutral-900 placeholder:text-black/60 dark:placeholder:text-white/60 font-bold neo-shadow"
+              className="pl-12 h-14 text-base rounded-2xl border-3 border-black bg-white dark:bg-neutral-700 placeholder:text-black/60 dark:placeholder:text-white/60 font-bold neo-shadow"
             />
           </div>
 
@@ -82,7 +82,7 @@ export default function EpisodeFilters() {
               placeholder="Episode code (e.g., S01E01)..."
               value={episodeInput}
               onChange={(e) => setEpisodeInput(e.target.value.toUpperCase())}
-              className="h-14 text-base border-3 border-black dark:border-white bg-white dark:bg-neutral-900 placeholder:text-black/60 dark:placeholder:text-white/60 font-bold neo-shadow"
+              className="h-14 text-base rounded-2xl border-3 border-black bg-white dark:bg-neutral-700 placeholder:text-black/60 dark:placeholder:text-white/60 font-bold neo-shadow"
             />
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function EpisodeFilters() {
         <div className="flex gap-4">
           <Button
             type="submit"
-            className="h-12 px-8 border-3 border-black dark:border-white bg-[#00b5cc] hover:bg-[#009eb3] text-white font-black neo-shadow neo-active"
+            className="h-12 px-8 rounded-2xl border-3 border-black bg-[#00b5cc] hover:bg-[#009eb3] text-white font-black neo-shadow neo-active"
           >
             SEARCH
           </Button>
@@ -100,7 +100,7 @@ export default function EpisodeFilters() {
               type="button"
               variant="outline"
               onClick={handleReset}
-              className="h-12 px-6 gap-2 border-3 border-black dark:border-white bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-black neo-shadow neo-active"
+              className="h-12 px-6 gap-2 rounded-2xl border-3 border-black bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-black neo-shadow neo-active"
             >
               <X className="h-4 w-4" />
               RESET
